@@ -63,10 +63,11 @@ def one(input1, input2):
         # Use your CLI to access the Python documentation and get help manipulating strings - help(str).
 
 def two(input):
-        return ""
-
-
-
+        try:
+                i = input.lower().index('bert')
+                j = input.lower().index('bert', i+4)
+        except (IndexError, ValueError): return ""
+        return input[i+4:j]
 
         # <QUESTION 3>
 
@@ -166,7 +167,7 @@ def five(input):
 
 
 def six(input):
-        return False
+        return input[input.index('ie')-1] != 'c' if 'ie' in input else input[input.index('ei')-1] == 'c' if 'ei' in input else True
 
         # <QUESTION 7>
 
